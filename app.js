@@ -18,7 +18,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/test', function (req, res) {
-  res.send('Test route!');
+  res.send('Serving the test route!');
 });
 
 // eslint-disable-next-line no-undef
