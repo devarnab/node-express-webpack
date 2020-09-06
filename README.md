@@ -52,6 +52,8 @@ To **build** the server run below command
 npm run build:dev
 ```
 
+Or, yarn users, run: `yarn build:dev`
+
 ### In Production mode
 
 For production _Build and Run_ run below
@@ -61,4 +63,4 @@ npm run build
 npm start
 ```
 
-For yarn users, run `yarn build` then `yarn start`
+For yarn users, run: `yarn build` then, `yarn start`
