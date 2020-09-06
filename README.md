@@ -7,6 +7,8 @@ This boilerplate is a bare minimum setup for Node-Express with Webpack. It only 
 This boiler plate consists of below packages:
 
 - Express Server
+- Eslint for linting
+- Husky for pre-commit hooks
 - Webpack bundler
 - ES6 code transpiler
 
