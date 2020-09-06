@@ -14,13 +14,14 @@ app.use(
 );
 
 app.get('/', function (req, res) {
-  res.send('Ok Server running!');
+  res.send('Ok, Server is running!');
 });
 
 app.get('/test', function (req, res) {
   res.send('Test route!');
 });
 
+// eslint-disable-next-line no-undef
 const port = process.env.PORT || 3000;
 
 app.listen(port, function () {
