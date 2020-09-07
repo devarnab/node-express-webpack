@@ -9,8 +9,8 @@ This boiler plate consists of below packages:
 - Express Server
 - Eslint for linting
 - Husky for pre-commit hooks
-- Webpack bundler
 - ES6 code transpiler
+- Webpack bundler
 
 ## Usage
 
@@ -46,23 +46,22 @@ npm run start:dev
 
 Or, yarn users, run: `yarn start:dev`
 
-This will start the server at `http://localhost:3000`
+This will start the server at `http://localhost:3000`. We can use [PostMan](https://www.postman.com/downloads/) to interact with the APIs.
+
+### In Production mode
+
+To _Build and Run_ in production mode, run below
+
+```javascript
+npm start
+```
+
+For yarn users, run: `yarn start`
 
 To **build** the server run below command
 
 ```javascript
-npm run build:dev
-```
-
-Or, yarn users, run: `yarn build:dev`
-
-### In Production mode
-
-For production _Build and Run_ run below
-
-```javascript
 npm run build
-npm start
 ```
 
-For yarn users, run: `yarn build` then, `yarn start`
+Or, yarn users, run: `yarn build`

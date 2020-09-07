@@ -1,29 +1,30 @@
 import 'dotenv/config';
 import express from 'express';
-import webpack from 'webpack';
-import webpackDevMiddleware from 'webpack-dev-middleware';
-import config from './webpack.config.dev.js';
+import routes from './src/routes';
+import 'regenerator-runtime/runtime.js';
 
-const app = express();
-const compiler = webpack(config);
+let app;
 
-app.use(
-  webpackDevMiddleware(compiler, {
-    publicPath: config.output.publicPath,
-  })
-);
+const applyMiddleWares = () => {
+  app.use('/', routes);
+};
 
-app.get('/', function (req, res) {
-  res.send('Ok, Server is running!');
-});
+const startServer = () => {
+  applyMiddleWares();
 
-app.get('/test', function (req, res) {
-  res.send('Serving the test route!');
-});
+  const port = process.env.PORT || 3000;
+  app.listen(port, function () {
+    console.log(`Server listening on port ${port}!`);
+  });
+};
 
-// eslint-disable-next-line no-undef
-const port = process.env.PORT || 3000;
-
-app.listen(port, function () {
-  console.log(`Example app listening on port ${port}!`);
-});
+(async () => {
+  if (process.env.NODE_ENV === 'development') {
+    const { default: devApp } = await import('./dev-middleware');
+    app = devApp;
+    startServer();
+  } else {
+    app = express();
+    startServer();
+  }
+})();
